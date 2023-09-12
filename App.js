@@ -1,20 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from './components/Header';
+import Main from './components/Main';
+import { RandomWordContextProvider } from './context/randomWordContext';
 
 export default function App() {
   return (
+    <RandomWordContextProvider>
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Header />
+      <Main />
     </View>
+    </RandomWordContextProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    flexDirection: 'column',
+    backgroundColor: '#222',
     alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 30,
   },
 });
